@@ -10,6 +10,19 @@ A full-stack web application for team collaboration with **Role-Based Access Con
 
 ---
 
+## 🌐 Live Demo & Credentials
+
+**Live URL**: [https://web-production-6fd3a.up.railway.app](https://web-production-6fd3a.up.railway.app)
+
+To easily evaluate the application, please use the following seeded demo credentials:
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | `admin@team.com` | `admin123` |
+| **Member** | `alice@team.com` | `member123` |
+
+---
+
 ## 📋 Features
 
 ### Authentication & Authorization
@@ -182,17 +195,7 @@ npm run dev
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:5000/api
 
-### Demo Credentials
 
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@team.com | admin123 |
-| Member | alice@team.com | member123 |
-| Member | bob@team.com | member123 |
-
-
-
----
 
 ## 📁 Project Structure
 
