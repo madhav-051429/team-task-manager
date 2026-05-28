@@ -37,8 +37,13 @@ app.get('/api/health', (req, res) => {
 if (process.env.NODE_ENV === 'production') {
   const clientBuildPath = path.join(__dirname, '../../client/dist');
   app.use(express.static(clientBuildPath));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  
+  // Safe catch-all for React Router SPA (avoids Express 5 path-to-regexp errors)
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api')) {
+      return res.sendFile(path.join(clientBuildPath, 'index.html'));
+    }
+    next();
   });
 }
 
