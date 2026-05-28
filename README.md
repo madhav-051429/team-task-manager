@@ -222,21 +222,7 @@ team-task-manager/
 └── README.md
 ```
 
----
 
-## ✅ Submission Checklist
-
-- [x] Railway deployment configuration ready
-- [x] Admin and Member users can be created
-- [x] Member physically restricted from creating projects (API returns 403)
-- [x] Dashboard accurately calculates overdue tasks
-- [x] GitHub repo contains README.md with setup instructions
-- [x] Demo script prepared for 2-5 min video
-- [x] Kanban board with visual overdue indicators
-- [x] JWT authentication with bcrypt password hashing
-- [x] RBAC middleware protecting all routes
-- [x] Cascading deletes in database schema
-- [x] Responsive dark-themed UI with glassmorphism
 
 ---
 
