@@ -29,9 +29,9 @@ const register = async (req, res, next) => {
       throw new BadRequestError('Invalid email format');
     }
 
-    // Validate role
-    const validRoles = ['ADMIN', 'MEMBER'];
-    const userRole = role && validRoles.includes(role.toUpperCase()) ? role.toUpperCase() : 'MEMBER';
+    // Security: All new signups are MEMBER.
+    // Only existing admins can promote users (or via seed data).
+    const userRole = 'MEMBER';
 
     // Check if user already exists
     const existingUser = await prisma.user.findUnique({ where: { email } });

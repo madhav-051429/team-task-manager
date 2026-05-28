@@ -6,7 +6,6 @@ export default function RegisterForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('MEMBER');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { register } = useAuth();
@@ -34,7 +33,7 @@ export default function RegisterForm() {
 
     setLoading(true);
     try {
-      await register(name, email, password, role);
+      await register(name, email, password);
       navigate('/');
     } catch (err) {
       setError(err.response?.data?.error || 'Registration failed');
@@ -105,20 +104,7 @@ export default function RegisterForm() {
           />
         </div>
 
-        <div style={{ marginBottom: '24px' }}>
-          <label htmlFor="register-role" className="form-label">Role</label>
-          <select
-            id="register-role"
-            className="input-field"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-          >
-            <option value="MEMBER">Member</option>
-            <option value="ADMIN">Admin</option>
-          </select>
-        </div>
-
-        <button type="submit" className="btn-primary" disabled={loading} style={{ width: '100%', justifyContent: 'center', padding: '12px' }}>
+        <button type="submit" className="btn-primary" disabled={loading} style={{ width: '100%', justifyContent: 'center', padding: '12px', marginTop: '24px' }}>
           {loading ? 'Creating account...' : 'Create Account'}
         </button>
 
