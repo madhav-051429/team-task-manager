@@ -169,6 +169,11 @@ select.input-field {
   padding-right: 36px;
 }
 
+select.input-field option {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
 textarea.input-field {
   resize: vertical;
   min-height: 80px;
