@@ -8,11 +8,11 @@
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
     "build": "cd client && npm install && npm run build && cd ../server && npm install && npx prisma generate",
-    "start": "cd server && npx prisma migrate deploy && node src/index.js",
+    "start": "cd server && npx prisma migrate deploy && npx prisma db seed && node src/index.js",
     "postinstall": "npm run build"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.2.1"
   },
   "engines": {
     "node": ">=18.0.0"
